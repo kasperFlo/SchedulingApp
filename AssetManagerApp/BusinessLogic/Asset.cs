@@ -48,13 +48,14 @@ namespace AssetManagerApp.BusinessLogic
         }
 
         //Create a parameterized constructor to initialize all fields ensuring the validations implemented in the property setters above are enforced.
-        public Asset(string assetName , string details , string manufacturer , float price , DateOnly purchaseDate)
+        public Asset(string assetName , string details , string manufacturer , float price , DateOnly purchaseDate,Category category)
         {
             AssetName = assetName;
             _details = details;
             _manufacturer = manufacturer;
             Price = price;
             _purchaseDate = purchaseDate;
+            _category = category;
         }
 
         //Implement IComparable, so that order of Assets is decided based on the Name of the Asset.

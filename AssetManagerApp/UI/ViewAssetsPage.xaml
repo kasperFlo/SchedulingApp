@@ -43,6 +43,7 @@
             <ListView
                 x:Name="AssetsListView"
                 VerticalScrollBarVisibility="Always">
+
             </ListView>
         </Frame>
 

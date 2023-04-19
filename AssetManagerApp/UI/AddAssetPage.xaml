@@ -87,16 +87,25 @@
         <HorizontalStackLayout
             Grid.Row="7"
             Grid.Column="0"
-            Grid.ColumnSpan="2">
-            <HorizontalStackLayout
-                HorizontalOptions="Center">
-            <Button 
+            Grid.ColumnSpan="2"
+            HorizontalOptions="Center">
+
+            <Button
+                Margin="10"
                 Text="Add Asset" 
-                BackgroundColor="DarkRed"/>
-            <Button 
+                BackgroundColor="DarkRed"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Clicked="AddAssetButtonClicked"
+                />
+            <Button
+                Margin="10"
                 Text="View Assets" 
-                BackgroundColor="DarkRed"/>
-            </HorizontalStackLayout>
+                BackgroundColor="DarkRed"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Clicked="ViewAssetsClicked"/>
+
         </HorizontalStackLayout>
     </Grid>
 </ContentPage>
