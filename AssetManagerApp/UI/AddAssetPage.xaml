@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AssetManagerApp.UI.AddAssetPage"
+             Title="">
+    <!--The Main Grid-->
+    <Grid
+        RowDefinitions="*,*,*,*,*,*,*,2*"
+        ColumnDefinitions="*,2*">
+
+        <!--The header label-->
+        <Label Text="Asset Manager"
+               Grid.ColumnSpan="2" />
+
+        <!--Input fields and corresponding labels-->
+        <Label 
+            Text="Name"
+            Grid.Row="1"
+            Grid.Column="0" />
+        <Entry
+            x:Name="NameEntry"
+            Grid.Row="1"
+            Grid.Column="1" />
+
+        <Label 
+            Text="Manufacturer"
+            Grid.Row="2"
+            Grid.Column="0" />
+        <Entry
+            x:Name="ManufacturerEntry"
+            Grid.Row="2"
+            Grid.Column="1" />
+
+        <Label 
+            Text="Details"
+            Grid.Row="3"
+            Grid.Column="0" />
+        <Entry
+            x:Name="DetailsEntry"
+            Grid.Row="3"
+            Grid.Column="1" />
+
+        <Label 
+            Text="Price"
+            Grid.Row="4"
+            Grid.Column="0" />
+        <Entry
+            x:Name="PriceEntry"
+            Grid.Row="4"
+            Grid.Column="1" />
+
+        <Label 
+            Text="Purchase Date"
+            Grid.Row="5"
+            Grid.Column="0" />
+        <DatePicker   
+            x:Name="PurchaseDatePicker"
+            Grid.Row="5"
+            Grid.Column="1"
+            Margin="5"
+            FontSize="Body"
+            VerticalOptions="Center" />
+
+        <Label 
+            Text="Category"
+            Grid.Row="6"
+            Grid.Column="0" />
+        <Picker
+            x:Name="CategoryPicker"
+            Grid.Row="6"
+            Grid.Column="1" 
+            Margin="5" 
+            VerticalOptions="Center" />
+
+        <!--Bottom row buttons-->
+        <HorizontalStackLayout
+            Grid.Row="7"
+            Grid.Column="0">
+            <Button 
+                Text="Add Asset" 
+                BackgroundColor="DarkRed"/>
+            <Button 
+                Text="View Assets" 
+                BackgroundColor="DarkRed"/>
+        </HorizontalStackLayout>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AssetManagerApp.UI.ViewAssetsPage"
+             Title="">
+    <Grid
+        RowDefinitions="*,2*,5*,*,*">
+        <!--The Header Label-->
+        <Label 
+            Text="View Assets"/>
+        
+        <!--The Main Grid-->
+        <Grid
+            ColumnDefinitions="*,*"
+            Grid.Row="1">
+
+            <!--Details of the selected asset-->
+            <Image 
+                Aspect="AspectFit"
+                Margin="10"
+                VerticalOptions="Center"
+                HorizontalOptions="End"/>
+            <VerticalStackLayout
+                Grid.Column="1"
+                VerticalOptions="Center">
+                <Label 
+                    x:Name="AssetNameLabel"/>
+                <Label 
+                    x:Name="ManufacturerLabel"/>
+                <Label 
+                    x:Name="PurchaseDateLabel"/>
+                <Label 
+                    x:Name="PriceLabel"/>
+            </VerticalStackLayout>
+        </Grid>
+
+
+        <!--List of all Assets-->
+        <Frame BorderColor="DarkRed"
+               Grid.Row="2"
+               Margin="5">
+            <ListView
+                x:Name="AssetsListView"
+                VerticalScrollBarVisibility="Always">
+            </ListView>
+        </Frame>
+
+        <!--The summary label-->
+        <Label
+            Grid.Row="3"
+            x:Name="TotalPriceLabel"/>
+
+        <!--Back button-->
+        <Button
+            Grid.Row="4"
+            Text="Back"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            BackgroundColor="DarkRed"/>
+    </Grid>
+</ContentPage>
