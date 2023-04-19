@@ -37,12 +37,14 @@ public partial class AddAssetPage : ContentPage
 
         try
         {
+
             string Name = NameEntry.Text.ToString();
             string Manufacturer = ManufacturerEntry.Text.ToString();
             string Details = DetailsEntry.Text.ToString();
             DateOnly Purchase = DateOnly.FromDateTime(PurchaseDatePicker.Date);
             float price = float.Parse(PriceEntry.Text);
-            Enum.TryParse("Active", out Category category);
+            Enum.TryParse(CategoryPicker.SelectedItem.ToString(), out Category category);
+
             if (price <= 0)
                 throw new ArgumentException("AssetPrice must be greater then 0");
 
@@ -50,6 +52,19 @@ public partial class AddAssetPage : ContentPage
 
             Asset tempAsset = new Asset(Name, Details, Manufacturer, price, Purchase, category);
             Manager.AddAsset(tempAsset);
+            Manager.SaveData(Manager.JsonManager);
+
+            DisplayAlert("Successfuly added", "Asset was added successfully", "ok");
+            NameEntry.Text = null;
+            ManufacturerEntry.Text = null;
+            DetailsEntry.Text = null;
+            PurchaseDatePicker.Date = DateTime.Now;
+            PriceEntry.Text = null;
+            CategoryPicker.SelectedItem = null;
+
+
+
+
         }
         catch (Exception)
         {
