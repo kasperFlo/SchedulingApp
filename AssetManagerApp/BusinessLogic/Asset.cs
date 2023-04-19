@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
-using BusinessLogic;
 
 namespace AssetManagerApp.BusinessLogic
 {
@@ -60,21 +59,10 @@ namespace AssetManagerApp.BusinessLogic
 
         //Implement IComparable, so that order of Assets is decided based on the Name of the Asset.
 
-        public int CompareTo(object obj)
+        public int CompareTo(Asset obj)
         {
-            Asset otherPerson = obj as Asset;
-            return string.Compare(AssetName, otherPerson.AssetName);
-
-            //if (obj == null) return 1;
-
-            //if (otherPerson != null)
-            //    return this.AssetName.CompareTo(otherPerson.AssetName);
-            //else
-            //    throw new ArgumentException("Object is not a Person");
+            return this.AssetName.CompareTo(obj.AssetName);
         }
-
-
-
 
     }
 }
