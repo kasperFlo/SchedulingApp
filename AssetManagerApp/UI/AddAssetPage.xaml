@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AssetManagerApp.UI.AddAssetPage"
@@ -10,46 +10,56 @@
 
         <!--The header label-->
         <Label Text="Asset Manager"
+               Style="{StaticResource HeaderLabelStyle}"
                Grid.ColumnSpan="2" />
 
         <!--Input fields and corresponding labels-->
-        <Label 
+        <Label
+            Style="{StaticResource SubTextStyle}"
             Text="Name"
             Grid.Row="1"
             Grid.Column="0" />
         <Entry
+            Style="{StaticResource MainEntryStyle}"
             x:Name="NameEntry"
             Grid.Row="1"
             Grid.Column="1" />
 
-        <Label 
+        <Label
+            Style="{StaticResource SubTextStyle}"
             Text="Manufacturer"
             Grid.Row="2"
             Grid.Column="0" />
         <Entry
+            Style="{StaticResource MainEntryStyle}"
             x:Name="ManufacturerEntry"
             Grid.Row="2"
             Grid.Column="1" />
 
-        <Label 
+        <Label
+            Style="{StaticResource SubTextStyle}"
             Text="Details"
             Grid.Row="3"
             Grid.Column="0" />
         <Entry
+            Style="{StaticResource MainEntryStyle}"
             x:Name="DetailsEntry"
             Grid.Row="3"
             Grid.Column="1" />
 
-        <Label 
+        <Label
+            Style="{StaticResource SubTextStyle}"
             Text="Price"
             Grid.Row="4"
             Grid.Column="0" />
         <Entry
+            Style="{StaticResource MainEntryStyle}"
             x:Name="PriceEntry"
             Grid.Row="4"
             Grid.Column="1" />
 
-        <Label 
+        <Label
+            Style="{StaticResource SubTextStyle}"
             Text="Purchase Date"
             Grid.Row="5"
             Grid.Column="0" />
@@ -61,7 +71,8 @@
             FontSize="Body"
             VerticalOptions="Center" />
 
-        <Label 
+        <Label
+            Style="{StaticResource SubTextStyle}"
             Text="Category"
             Grid.Row="6"
             Grid.Column="0" />
@@ -75,13 +86,17 @@
         <!--Bottom row buttons-->
         <HorizontalStackLayout
             Grid.Row="7"
-            Grid.Column="0">
+            Grid.Column="0"
+            Grid.ColumnSpan="2">
+            <HorizontalStackLayout
+                HorizontalOptions="Center">
             <Button 
                 Text="Add Asset" 
                 BackgroundColor="DarkRed"/>
             <Button 
                 Text="View Assets" 
                 BackgroundColor="DarkRed"/>
+            </HorizontalStackLayout>
         </HorizontalStackLayout>
     </Grid>
 </ContentPage>

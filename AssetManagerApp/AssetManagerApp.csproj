@@ -62,6 +62,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Remove="Resources\Styles\Colors %28copy%29.xaml" />
+	</ItemGroup>
+	<ItemGroup>
 	  <MauiXaml Update="UI\AddAssetPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -70,4 +73,9 @@
 	  </MauiXaml>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <BundleResource Include="Resources\Styles\Resource.xaml" Condition=" '$(EnableDefaultXamlItems)' == 'true' ">
+	    <SubType>Designer</SubType>
+	  </BundleResource>
+	</ItemGroup>
 </Project>

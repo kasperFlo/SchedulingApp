@@ -11,9 +11,17 @@ namespace AssetManagerApp.BusinessLogic
     public class AssetManager
     {
         List<Asset> _assets = new List<Asset>();
-        
+
         //Define read only property Assets that returns the list of assets sorted on asset name.
-        public List<Asset> Assets { get => _assets.Sort() ; }
+        public List<Asset> Assets
+        {
+            get
+            {
+                _assets.Sort();
+                return _assets;
+            }
+        }
+
         public void AddAsset(Asset asset)
         {
             _assets.Add(asset);
