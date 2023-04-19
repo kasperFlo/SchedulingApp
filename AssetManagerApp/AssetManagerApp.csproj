@@ -77,5 +77,8 @@
 	  <BundleResource Include="Resources\Styles\Resource.xaml" Condition=" '$(EnableDefaultXamlItems)' == 'true' ">
 	    <SubType>Designer</SubType>
 	  </BundleResource>
+	  <BundleResource Include="Resources\Images\vehicles.svg" />
+	  <BundleResource Include="Resources\Images\electronics.svg" />
+	  <BundleResource Include="Resources\Images\furniture.svg" />
 	</ItemGroup>
 </Project>

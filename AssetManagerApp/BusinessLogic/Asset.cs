@@ -44,7 +44,7 @@ namespace AssetManagerApp.BusinessLogic
         string _categoryIconFile;
         public string CategoryIconFile
         {
-            get => _categoryIconFile; set => _categoryIconFile = $"{Category}.png";
+            get => $"{Category}.png"; set => _categoryIconFile = value;
         }
 
         //Create a parameterized constructor to initialize all fields ensuring the validations implemented in the property setters above are enforced.

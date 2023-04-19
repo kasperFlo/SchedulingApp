@@ -16,9 +16,11 @@
             Grid.Row="1">
 
             <!--Details of the selected asset-->
-            <Image 
+            <Image
+                x:Name="SelectedAssetImage"
                 Aspect="AspectFit"
                 Margin="10"
+                WidthRequest="100"
                 VerticalOptions="Center"
                 HorizontalOptions="End"/>
             <VerticalStackLayout
@@ -42,8 +44,35 @@
                Margin="5">
             <ListView
                 x:Name="AssetsListView"
-                VerticalScrollBarVisibility="Always">
+                VerticalScrollBarVisibility="Always"
+                ItemSelected="AssetListViewSelected"
+                >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid
+                                ColumnDefinitions="*,5*">
+                                <Image
+                                    Aspect="AspectFit"
+                                    Source="{Binding CategoryIconFile}"
+                                    />
+                                <VerticalStackLayout
+                                    Grid.Column="1"
+                                    >
+                                    <Label 
+                                        Text="{Binding AssetName, StringFormat='Asset Name : {0}'}"
+                                        FontAttributes="Bold"
+                                        FontSize="Medium"/>
 
+                                    <Label 
+                                        Text="{Binding Manufacturer, StringFormat='Manfacturer : {0}'}"
+                                        FontAttributes="Italic"
+                                        FontSize="Small"/>
+                                </VerticalStackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
             </ListView>
         </Frame>
 
@@ -58,6 +87,8 @@
             Text="Back"
             HorizontalOptions="Center"
             VerticalOptions="Center"
-            BackgroundColor="DarkRed"/>
+            BackgroundColor="DarkRed"
+            Clicked="BackButtonClicked"
+            />
     </Grid>
 </ContentPage>
